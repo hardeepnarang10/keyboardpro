@@ -64,6 +64,19 @@ function start() {
 
 
 
+//reset button
+function reset() {
+  clearInterval(interval);
+  interval = null;
+  timer = [0,0,0,0];
+  timerRunning = false;
+  theTimer.innerHTML = "00:00:00";
+  testArea.style.borderColor = "silver";
+  testArea.value = "";
+}
+
+
 //event listener to keyboard input
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
+resetButton.addEventListener("click", reset, false);
